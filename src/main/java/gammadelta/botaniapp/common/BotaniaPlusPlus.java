@@ -21,7 +21,7 @@ public class BotaniaPlusPlus {
     @SidedProxy(clientSide = ModNames.CLIENT_PROXY, serverSide = ModNames.SERVER_PROXY)
     public static IProxy proxy;
 
-    private static Logger logger;
+    public static Logger logger;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {

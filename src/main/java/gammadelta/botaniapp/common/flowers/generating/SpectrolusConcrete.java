@@ -1,5 +1,6 @@
 package gammadelta.botaniapp.common.flowers.generating;
 
+import gammadelta.botaniapp.common.BotaniaPlusPlus;
 import gammadelta.botaniapp.common.misc.LexiconPages;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
@@ -49,10 +50,12 @@ public class SpectrolusConcrete extends SubTileGenerating {
         for(EntityItem item : items) {
             ItemStack stack = item.getItem();
 
-            if(!stack.isEmpty() && stack.getItem() == concrete && !item.isDead && item.getAge() >= slowdown) {
+            int age = item.ticksExisted;
+
+            if(!stack.isEmpty() && stack.getItem() == concrete && !item.isDead && age >= slowdown) {
                 int meta = stack.getItemDamage();
                 if(meta == nextColor) {
-                    mana = Math.min(getMaxMana(), mana + MANA_AMT);
+                    mana = Math.min(getMaxMana(), mana + MANA_AMT); // generate the mana
                     nextColor = nextColor == 15 ? 0 : nextColor + 1;
                     sync();
 
