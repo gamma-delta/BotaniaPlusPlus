@@ -1,0 +1,13 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all",
+        "uvlock": true,
+        "textures": {
+            "all": "botaniapp:blocks/test_block"
+        }
+    },
+    "variants": {
+        "normal": [{}]
+    }
+}
